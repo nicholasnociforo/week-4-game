@@ -6,8 +6,6 @@ var jupiterNumber = Math.floor(Math.random()*12)+1;
 var saturnNumber = Math.floor(Math.random()*12)+1;
 var marsNumber = Math.floor(Math.random()*12)+1;
 var earthNumber = Math.floor(Math.random()*12)+1;
-var youwin = "You Win!"
-var youlose = "You Lose!"
 
 var numberToGuess = Math.floor(Math.random()*120)+19
 console.log(numberToGuess);
@@ -45,6 +43,7 @@ if (playerAddedScore === numberToGuess) {
 	reset();
 	
 } if (playerAddedScore > numberToGuess)  {
+	$("#gameStatus").html("you lose");
 	losing();
 	reset();
 	
@@ -56,7 +55,7 @@ if (playerAddedScore === numberToGuess) {
 });
 
 
-$("#saturn").on("click", function(){
+$("#saturn").on("click", function(){	
 console.log(saturnNumber);
 playerAddedScore += saturnNumber 
 var totalScoreDiv = $("<div>");
@@ -70,6 +69,7 @@ if (playerAddedScore === numberToGuess) {
 
 
 } else if (playerAddedScore > numberToGuess)  {
+	$("#gameStatus").html("you lose");
 	losing();
 	reset();
 
@@ -84,7 +84,7 @@ if (playerAddedScore === numberToGuess) {
 
 
 
-$("#mars").on("click", function(){
+$("#mars").on("click", function(){	
 console.log(marsNumber);
 playerAddedScore += marsNumber 
 var totalScoreDiv = $("<div>");
@@ -113,7 +113,7 @@ if (playerAddedScore === numberToGuess) {
 
 
 
-$("#earth").on("click", function(){
+$("#earth").on("click", function(){	
 console.log(earthNumber);
 playerAddedScore += earthNumber 
 var totalScoreDiv = $("<div>");
@@ -127,6 +127,7 @@ if (playerAddedScore === numberToGuess) {
 	
 
 } else if (playerAddedScore > numberToGuess)  {
+	$("#gameStatus").html("you lose");
 	losing();
 	reset();
 	
@@ -160,35 +161,39 @@ reset = function () {
 
 	
 	 playerAddedScore = 0;
+
+
 	
 	var totalScoreDiv = $("<div>");
 	totalScoreDiv.html(playerAddedScore);
 	$("#playersTotalScore").html(totalScoreDiv);
 
-	$("#gameStatus").empty();
+
 };
 
 winning = function () {
+	var gameStatusDiv= $("<div>")
+	gameStatusDiv.html("You Win!")
+	$("#gameStatus").html(gameStatusDiv);
 	wins ++;
 	console.log(wins);
 	var playerWinsDiv = $("<div>");
 	playerWinsDiv.html(wins);
 	$("#wins").html(playerWinsDiv);
-	var gameStatusDiv = $("<div>");
-	gameStatusDiv.html(youwin)
-	$("#gameStatus").html(gameStatusDiv);
+	
 
 };
 
 losing = function (){
+	var gameStatusDiv= $("<div>")
+	gameStatusDiv.html("You Lose!")
+	$("#gameStatus").html(gameStatusDiv);
 	losses ++;
 	console.log(losses);
 	var playerLossDiv = $("<div>");
 	playerLossDiv.html(losses);
 	$("#losses").html(playerLossDiv);
-	var gameStatusDiv = $("<div>");
-	gameStatusDiv.html(youlose);
-	$("#gameStatus").html(gameStatusDiv);
+	
 
 
 };

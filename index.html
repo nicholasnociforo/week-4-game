@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Planet Collector </title>
+
+<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+<link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<title></title>
+</head>
+<body>
+<div class= "container" id= "header">
+	<h1> Planet Collector </h1>
+</div>
+
+<br>
+
+<div class = "container" id="instructions">
+
+<p> You will be given a random number at the start of the game </p>
+<br>
+<p> There are 4 planets below. By clicking on a planet, you will ad a specific amount of points to your total score </p>
+<br>
+<p> You win the game by matching your total score to the random number. You lose the game if your total score goes above the randome number </p>
+<br>
+
+<p> The value of each planet is hidden from you until you click on it </p>
+<br>
+<p> Each time when the game restarts, the game will change the value of each planet </p>
+</div>
+
+<br>
+
+<div id="double-box">
+
+<div class ="container" id="randomNumber">
+
+<h2> Number to match: </h2><span id= "numberToMatch"></span>
+	
+
+
+</div>
+
+
+<div class="container" id="scorez">
+	<p> Wins: </p> <span id="wins"></span>
+	<br>
+	<p> Losses: </p><span id="losses"></span>
+
+
+</div>
+
+</div>
+
+<br>
+
+
+<div class = "buttons">
+<button id = "jupiter">
+<img src="assets/images/jupiter.jpg" width = "100px" height="100px" id="jupiter" /></button>
+<button id = "saturn">
+<img src="assets/images/saturn.jpg" width = "100px" height="100px"/>
+</button>	
+<button id= "mars">
+<img src="assets/images/mars.jpg" width = "100px" height="100px"/>	
+</button>
+<button id="earth">
+<img src="assets/images/earth.jpg" width = "100px" height="100px"/>
+</button>
+
+</div>
+
+<br>
+
+<div class = "container" id="totalScore">
+
+<p> Your total score is: </p>
+
+<span id="playersTotalScore"></span>
+	
+
+</div>
+
+<div class = "container" id ="winorlose">
+<p> Your status </p>
+	<span id="gameStatus"></span>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="assets/javascript/game.js"></script>
+</body>
+</html>
